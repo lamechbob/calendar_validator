@@ -1,3 +1,11 @@
+#Project Specific
+Data/Logs
+Data/Pay Calendars
+Data/Pay Calendars History
+Data/Reports
+Data/Helpers/notification_list.csv
+Data/Helpers/Error_Exceptions_List.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
