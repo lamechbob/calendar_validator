@@ -1,0 +1,17 @@
+Error ID,Error Message
+0,First Pay Period Cutoff Date is prior to 1/2 of the current plan year
+1,Invalid No of Pay Periods. No of Pay Periods
+2,Cutoff Dates are not in the desired Plan Year
+3,Deduction Cutoff Date < Run Date
+4,Deduction Cutoff Date > Run Date. PAYAUTO_PAYROLL_CONFIG.OG_FUTURE_DATED_EVENTS_IND != Y
+5,Cutoff Date greater than next Pay Period Cutoff Date
+6,Next Pay Periods Begin Date is incorrect
+7,Previous Pay Periods End Date is incorrect
+8,Calendar contains dates that are in the OUTSIDE the Plan Year
+9,Date Format is Invalid
+10,OE File Run Date is equal to or greater than the first Pay Period Run Date
+11,Last Pay Period has a Cutoff Date in the next plan year
+12,Run Dates are not in order
+13,Calendar has multiple Pay Periods running on the same day
+14,Exc Standard on PAYROLL_SCHEDULE is NOT set to N
+15,Supp Cycle No NOT equal to 0
