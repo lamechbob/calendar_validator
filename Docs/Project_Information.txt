@@ -1,0 +1,24 @@
+Project setup is based off of "Sort Deduction Codes" project.
+
+The Follow Validations Should Take .
+
+Deduction Cutoff Date cannot be less than Mercer's Payroll Run Date in the same cycle
+All Deduction Cutoff Dates are within the plan year
+Deduction Cutoff Date cannot be greater than Deduction Cutoff Date of next pay period.
+If Cutoff Date exceeds Mercer's Payroll Run Date - compare config to see if payauto_payroll_config.og_future_dated_events_ind = "Y"
+Pay Periods should at least be partially contained in the plan year.
+Data: Make sure dates are formatted correctly
+Begin Dates should immediately follow the End Dates of the previous pay period
+Ensure dates per column are sequential based on the desired pay frequency
+Dates from the last cycle from the previous year don't overlap the first cycle of the new year.
+
+-- Added 9/17
+1st Last Date has to be 1/2 or greater ... or at least the second day of the plan year
+
+
+Language
+
+Desired Plan Year - The year in which we are validation. For example, this was created in 2021 but we are evaulating a
+2022 calendar.
+
+Cut Date - Abbreviation for Deduction Cutoff Date

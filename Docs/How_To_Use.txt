@@ -1,0 +1,11 @@
+This project has been designed to verify the legitimacy of planned or configured Client payroll Calendars on 365+. Using
+a variety of checks, the configured logic will review the submitted dates and generate a report containing errors and
+warnings.
+
+Steps To Use
+
+1. Query the desired Calendar using Get_Calendar.sql found in the Query Folder.
+2. Export the results as a CSV (No Quotes) to the "Pay Calendars" Folder.
+3. Open Settings.py and update the DATABASE_CAL variable.
+4. Also, while in Settings.py, update DESIRED_PLAY_YEAR to the Plan Year we are reviewing.
+5. Run Script, a report should generate in the "Reports" folder.
