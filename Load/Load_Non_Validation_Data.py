@@ -11,7 +11,7 @@ from Load.Load_Future_Ind import LoadFutureInd as lf
 
 import logging
 
-logging.basicConfig(filename=st.LOG_PATH + '\{}_{}.log'
+logging.basicConfig(filename=st.LOG_PATH + '/{}_{}.log'
                     .format(st.TEST_CAL,pd.to_datetime('today').strftime('%m%d%Y')),
                     format='%(asctime)s %(levelname)s %(message)s',
                     filemode='w')

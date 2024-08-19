@@ -10,7 +10,7 @@ from Load.Load_Future_Ind import LoadFutureInd as lf
 
 import logging
 
-logging.basicConfig(filename=st.LOG_PATH + '\{}_{}.log'
+logging.basicConfig(filename=st.LOG_PATH + '/{}_{}.log'
                     .format(st.TEST_CAL,pd.to_datetime('today').strftime('%m%d%Y')),
                     format='%(asctime)s %(levelname)s %(message)s',
                     filemode='w')
@@ -138,7 +138,7 @@ class ValidateCalendar:
         # Check Formarts of Dates
         # An incorrect format will be listed as 'Nat'
         bool_bad_date_format = self.calendar[st.PAYROLL_FILE_DATES_ONLY_COLUMNS].isnull()
-        bool_bad_date_format = bool_bad_date_format[bool_bad_date_format.eq(True).any(1)]
+        bool_bad_date_format = bool_bad_date_format[bool_bad_date_format.eq(True).any(axis=1)]
 
         # Cycle Through rows w/ Bad Formats
         for index, row in bool_bad_date_format.iterrows():
@@ -318,7 +318,7 @@ class ValidateCalendar:
         error_message_id = 5
 
         # If Cutoff Dates are in order, no further processing is needed
-        if pd.Index(self.calendar['Deduction Cutoff Date']).is_monotonic == True:
+        if pd.Index([self.calendar['Deduction Cutoff Date']]).is_monotonic_increasing == True:
 
             logging.info('Deduction Cutoff Greater Than Next: Pass')
         else:

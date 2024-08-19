@@ -4,7 +4,7 @@ from Locators.Settings import Settings as st
 
 import logging
 
-logging.basicConfig(filename=st.LOG_PATH + '\{}_{}.log'
+logging.basicConfig(filename=st.LOG_PATH + '/{}_{}.log'
                     .format(st.TEST_CAL,pd.to_datetime('today').strftime('%m%d%Y')),
                     format='%(asctime)s %(levelname)s %(message)s',
                     filemode='w')

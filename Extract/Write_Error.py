@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import openpyxl
 import re
 from datetime import datetime as dt
 from Locators.Settings import Settings as st
@@ -10,7 +11,7 @@ from Extract.Calendar_Compare import CalendarCompare as cc
 
 import logging
 
-logging.basicConfig(filename=st.LOG_PATH + '\{}_{}.log'
+logging.basicConfig(filename=st.LOG_PATH + '/{}_{}.log'
                     .format(st.TEST_CAL,pd.to_datetime('today').strftime('%m%d%Y')),
                     format='%(asctime)s %(levelname)s %(message)s',
                     filemode='w')
@@ -36,7 +37,8 @@ class WriteErrors:
         self.exception_list_file = st.REPORT_PATH + '{}_{}_EXCEPTION_LIST.csv'.format(st.TEST_CAL,pd.to_datetime('today').strftime('%m%d%Y'))
 
     def append_error_list(self,new_errors):
-        self.error_list = self.error_list.append(new_errors, ignore_index = True)
+        #self.error_list = self.error_list.concat(new_errors, ignore_index = True)
+        self.error_list = pd.concat([self.error_list, new_errors])
 
     def remove_exceptions(self):
 
@@ -162,8 +164,8 @@ class WriteErrors:
         self.error_list = self.error_list.sort_values(by=['Pay Group ID','Pay Period'])
 
         if len(self.error_list.index) == 0:
-            self.error_list.loc[len(self.error_list.index)] = ['N/A', 'Passed'
-                , 'No errors found']
+            self.error_list.loc[len(self.error_list.index)] = ['0','N/A','N/A'
+                ,'N/A','N/A','N/A','N/A']
 
         self.error_list.to_csv(st.REPORT_PATH + '{}_{}_Error_List.csv'
                                .format(st.TEST_CAL,pd.to_datetime('today').strftime('%m%d%Y')),index=False)
