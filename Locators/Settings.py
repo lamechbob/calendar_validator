@@ -13,7 +13,7 @@ class Settings:
     PAY_CAL_PATH = 'Data/Pay Calendars/'
 
     #Plan Year
-    DESIRED_PLAY_YEAR = 2024
+    DESIRED_PLAY_YEAR = 2025
 
     #Used to determine which enviroment to test
     #Variable must be set by the user

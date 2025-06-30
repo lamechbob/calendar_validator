@@ -122,6 +122,7 @@ This two-layer system ensures full team visibility while still holding each team
 
 - Contact information for client-specific email alerts is stored in:  
   - `Data/Helpers/Active client teams.csv`
+  - This list is pulled dynamically during each run to determine which teams should receive client-specific alerts.
 
 - Notification recipients for the full-team summary email are defined in:  
   - `Data/Helpers/notification_list.csv`

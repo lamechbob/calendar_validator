@@ -107,6 +107,8 @@ All outputs are archived and time-stamped to support audit, rollback, and long-t
 
 **Email Notifications:**
 - Personalized emails sent to responsible team leads when errors are found
+- Individual recipients are retrieved from a live SharePoint list maintained by the Client Solutions team.
+
 - Includes:
   - Client name
   - Calendar ID
